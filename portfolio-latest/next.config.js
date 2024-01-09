@@ -4,6 +4,14 @@ const nextConfig = {
     experimental: {
         swcPlugins: [['typewind/swc', {}]],
     },
+    images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'images.microcms-assets.io',
+          },
+        ],
+      },
 }
 
 module.exports = nextConfig

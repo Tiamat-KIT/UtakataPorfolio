@@ -3,6 +3,13 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { ColorSchemeScript, MantineProvider } from '@mantine/core'
 import Navbar from './components/Navbar'
+import { Suspense } from 'react'
+import { tw } from 'typewind'
+import BlogMenu from './components/microcms/BlogMenu'
+import DCMenu from './components/microcms/DevContentsMenu'
+import Carousel from './components/Carousel'
+import '@mantine/core/styles.css';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,7 +31,26 @@ export default function RootLayout({
       <body className={inter.className}>
         <MantineProvider>
           <Navbar />
-          {children}
+          <main className='h-full bg-base-100'>
+            <div className="grid grid-cols-4 grid-rows-1">
+              <div className="col-span-3">
+              <Carousel />
+                <article>
+                {children}
+                </article>
+              </div>
+            <div className="border-l-[1.0px] border-black h-full">
+              <aside className="container mx-auto px-4">
+                <Suspense>
+                  <BlogMenu />
+                  <span className={tw.p_10} />
+                  <DCMenu />
+                </Suspense>
+              
+              </aside>
+            </div>
+            </div>
+        </main>
         </MantineProvider>
         </body>
     </html>

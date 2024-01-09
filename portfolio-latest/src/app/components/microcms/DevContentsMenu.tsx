@@ -1,11 +1,13 @@
 import { DevContents_client,DevContentsData } from "./fetchDevContent"
+import Image from "next/image"
+import { tw } from "typewind"
 
 export default async function DCMenu(){
     const {contents} = await DevContents_client.getList<DevContentsData>({
         endpoint: "dev_data"
       })
     return (
-        <ul className="menu bg-primary-content w-64 rounded-box">
+        <ul className={`menu bg-primary-content ${tw.rounded_box.w_64}`}>
           <li>
             <details>
               <summary>DevContents</summary>
@@ -14,12 +16,12 @@ export default async function DCMenu(){
                     return (
                       <li key={blog.id}>
                         <a className="collapse collapse-arrow">
-                        <input type="radio" name="my-accordion-2" checked="checked" /> 
-                          <div className="collapse-title text-xl font-medium">
-                            Click to open this one and close others
+                        <input type="radio" name="my-accordion-2" /> 
+                          <div className={`collapse-title ${tw.text_sm.font_medium}`}>
+                            {blog.name}
                           </div>
                           <div className="collapse-content"> 
-                            <a>{blog.name}</a>
+                            <Image alt={blog.name} width={blog.image.width! / 3} height={blog.image.height! / 3} src={blog.image.url} />
                           </div>
                         </a>
                       </li>

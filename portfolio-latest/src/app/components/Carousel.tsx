@@ -1,6 +1,6 @@
 export default function Carousel(){
     return (
-        <div className="container mx-auto p-2">
+        <div className="container mx-auto p-2 z-5">
             <div className="carousel w-full border-4 border-slate">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />

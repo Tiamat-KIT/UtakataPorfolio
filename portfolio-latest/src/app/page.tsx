@@ -1,27 +1,16 @@
-import Carousel from './components/Carousel'
-import BlogMenu from './components/microcms/BlogMenu'
-import DCMenu from './components/microcms/DevContentsMenu'
+"use client"
 import { tw } from 'typewind';
 
 export default async function Home() {
-  
+
   return (
-    <main className='h-full bg-base-100'>
-      <div className="grid grid-cols-4 grid-rows-1">
-        <div className="col-span-3">
-          <Carousel />
-          <article>
-           
-          </article>
-        </div>
-      <div className="border-l-[1.0px] border-black h-full">
-        <aside className="container mx-auto px-4">
-        <BlogMenu />
-        <span className={tw.p_10} />
-        <DCMenu />
-        </aside>
-      </div>
-      </div>
-  </main>
+    <>
+        <h2 className={tw.text_2xl}>What's Utakata?</h2>
+        <p>工業大学（私立）に通っている一般的？な大学生</p>
+      
+
+
+    </>
+    
   )
 }
