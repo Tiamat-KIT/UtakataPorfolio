@@ -1,6 +1,7 @@
 export default function Navbar(){
     return (
-        <div className="navbar bg-base-200 border-b-[1px] border-base-200 rounded-b-full drop-shadow-md mb-3">
+        <nav>
+            <div className="navbar bg-base-200 border-b-[1px] border-base-200 rounded-b-full drop-shadow-md mb-3">
             <div className="navbar-start">
                 <div className="dropdown pl-5">
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -27,6 +28,8 @@ export default function Navbar(){
                 </div>
                 </button>
             </div>
-        </div>
+            </div>
+        </nav>
+        
     )
 }
